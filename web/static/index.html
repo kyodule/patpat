@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拍拍 PatPat</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>拍拍 PatPat</h1>
+            <div class="controls">
+                <select id="styleSelect" title="选择疏导风格">
+                    <option value="default">通用共情</option>
+                    <option value="cbt">认知行为 (CBT)</option>
+                    <option value="mindful">正念引导</option>
+                    <option value="positive">积极心理</option>
+                </select>
+                <button id="trendBtn" title="情绪趋势">📊 情绪趋势</button>
+            </div>
+        </header>
+        <div class="disclaimer">
+            ⚠️ 拍拍是一个 AI 陪伴工具，不能替代专业的心理咨询或医疗服务。如果你正在经历严重的心理困扰，请及时寻求专业帮助。
+        </div>
+        <div id="chatArea" class="chat-area">
+            <div class="welcome-msg">
+                <p>你好呀，我是拍拍 🤗</p>
+                <p>有什么想聊的，随时告诉我。</p>
+            </div>
+        </div>
+        <div id="trendModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>情绪趋势</h2>
+                    <button id="closeTrend" class="close-btn">&times;</button>
+                </div>
+                <div id="trendBody">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <form id="chatForm" class="chat-input">
+            <input type="text" id="msgInput" placeholder="输入你想说的话..." autocomplete="off" />
+            <button type="submit" id="sendBtn">发送</button>
+        </form>
+    </div>
+    <script src="/static/chat.js"></script>
+    <script src="/static/trend.js"></script>
+</body>
+</html>

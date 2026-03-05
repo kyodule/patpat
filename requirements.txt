@@ -1,0 +1,6 @@
+openai
+rich
+python-dotenv
+fastapi
+uvicorn
+websockets
